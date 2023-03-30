@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Open+Sans:wght@400;500&family=Poppins:wght@300;400;600&family=Quicksand:wght@400;600&family=Roboto+Condensed:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body::-webkit-scrollbar {
+  width: 6px;
+  height: 8px;
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--section-bgd);
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--nav-pink);
+  border-radius: 100vh;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: var(--nav-pink-shade);
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+:root {
+  --nav-grey: #f9d1d1;
+  --nav-deep-grey: #94959b;
+  --nav-pink: #FFB6C1;
+  --nav-pink-shade: #DB7093;
+  --card-peach-shade: #FFDAB9;
+  --nav-deep-blue: #E2C3C4;
+  --nav-bgd: #040b14;
+  --white: #fff;
+  --coral: #FADBD8;
+  --navy: #160c2c;
+  --light-blue: rgb(156, 183, 255);
+  --section-bgd: #140e24;
+
+}
+
+/* General styles */
+.about,
+.skills,
+.services,
+.works,
+.contact {
+  background-color: var(--section-bgd);
+  color: var(--nav-grey);
+  width: 100%;
+}
+
+.container {
+  padding: 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.loader {
+  background-color: #160c2c;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.loader-icon {
+  color: #fff;
+  height: 100;
+  width: 50;
+}
+
+/*  Load animations */
+.svg-wrapper {
+  position: relative;
+}
+
+@keyframes pageLoad {
+  0% {
+    stroke-dasharray: 140 540;
+    stroke-dashoffset: -474;
+    stroke-width: 8px;
+  }
+  100% {
+    stroke-width: 2px;
+    stroke-dashoffset: 0;
+    stroke-dasharray: 760;
+  }
+}
+.shape {
+  stroke-dasharray: 140 540;
+  stroke-dashoffset: -474;
+  stroke-width: 8px;
+  fill: transparent;
+  stroke: #FFB6C1;
+  border: 5px solid black;
+  animation: 3s ease 0s 1 pageLoad;
+}
+.text {
+  font-size: 16px;
+  text-transform: uppercase;
+  line-height: 32px;
+  letter-spacing: 8px;
+  color: #fff;
+  position: absolute;
+  left: 20px;
+  top: 10px;
+  width: 100%;
+  transform: translate(-50% -50%);
+}
+
+@media screen and (max-width: 700px) {
+  .container {
+    padding: 3rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .text {
+    font-size: 13px;
+    position: absolute;
+    left: 40px;
+    top: 10px;
+  }
+  .container {
+    padding: 1rem;
+  }
+}
