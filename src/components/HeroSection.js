@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../styles/HeroSection.css";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { BiDownload } from "react-icons/bi";
+import { BiHealth } from "react-icons/bi";
 import { AiOutlineArrowUp } from "react-icons/ai";
 import { animateScroll as scroll } from "react-scroll";
 import { motion } from "framer-motion";
@@ -107,7 +107,7 @@ const HeroSection = ({ nav, handleNav }) => {
 					href='Maria Eugênia Ghizellini CV.pdf'
 					download='Maria Eugênia Ghizellini CV'
 					className='hero-contact'>
-					Download CV <BiDownload className='cv-icon' />
+					Learn more about my work <BiHealth className='cv-icon' />
 				</a>
 			</motion.span>
 		</div>

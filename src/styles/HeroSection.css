@@ -33,7 +33,7 @@
 .hero-intro {
 	font-size: 4rem;
 	margin-bottom: 0.5rem;
-	color: var(--nav-pink);
+	color: var(--nav-orange);
 	display: flex;
 	flex-direction: column;
 }
@@ -47,12 +47,12 @@
 
 .hero-contact {
 	text-decoration: none;
-	color: var(--nav-pink);
+	color: var(--nav-orange);
   font-size: 80%;
 	font-weight: 500;
 	letter-spacing: 3px;
 	padding: 1rem 2rem;
-	border: 1px solid var(--nav-pink);
+	border: 1px solid var(--nav-orange);
 	background-color: transparent;
 	width: fit-content;
 	border-radius: 4px;
@@ -67,7 +67,7 @@
 }
 
 .hero-contact::after {
-	background-color: var(--nav-pink);
+	background-color: var(--nav-orange);
 	content: "";
 	display: block;
 	height: 100%;
@@ -106,11 +106,11 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	border: 3px solid var(--nav-pink);
+	border: 3px solid var(--nav-orange);
 	border-radius: 50%;
 	transition: all 0.4s ease;
 	z-index: 99999999;
-	background-color: var(--nav-pink);
+	background-color: var(--nav-orange);
 }
 
 .menu-icon {
@@ -183,6 +183,6 @@
 	.to-top-icon {
 		font-size: 1rem;
 		padding: 0.6rem;
-		background-color: var(--nav-pink);
+		background-color: var(--nav-orange);
 	}
 }

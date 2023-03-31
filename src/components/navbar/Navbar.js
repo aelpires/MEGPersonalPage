@@ -1,6 +1,6 @@
 import React from "react";
 import "../../styles/Navbar.css";
-import { FaHome, FaLaptop } from "react-icons/fa";
+import { FaHome } from "react-icons/fa";
 import { BiServer, BiEnvelope } from "react-icons/bi";
 import { FiUser } from "react-icons/fi";
 import { Link } from "react-scroll";
@@ -88,7 +88,8 @@ const Navbar = ({ nav, handleNav }) => {
 								About
 							</li>
 						</Link>
-						<Link
+						{/* This is a comment for future reference */}
+						{/*<Link
 							activeClass='active'
 							spy={true}
 							smooth={true}
@@ -100,7 +101,7 @@ const Navbar = ({ nav, handleNav }) => {
 							<li className='mid-link' onClick={handleNav}>
 								Skills
 							</li>
-						</Link>
+			  			</Link>*/}
 						<Link
 							activeClass='active'
 							spy={true}

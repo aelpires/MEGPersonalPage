@@ -3,7 +3,6 @@ import About from './About';
 import Contact from './Contact';
 import HeroSection from './HeroSection';
 import Services from './Services';
-import Skills from './Skills';
 
 
 const Main = ({nav, handleNav, closeNav}) => {
@@ -11,7 +10,8 @@ const Main = ({nav, handleNav, closeNav}) => {
     <div onClick={closeNav } className='main'>
         <HeroSection nav={nav} handleNav={handleNav} />
         <About />
-        <Skills />
+        {/* This is a comment with a code snippet */}
+        {/* <Skills /> */}
         <Services />
         <Contact />
     </div>

@@ -17,7 +17,7 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-  background: var(--nav-pink);
+  background: var(--nav-orangek);
   border-radius: 100vh;
 }
 
@@ -32,16 +32,16 @@ html, body {
 :root {
   --nav-grey: #f9d1d1;
   --nav-deep-grey: #94959b;
-  --nav-pink: #FFB6C1;
+  --nav-orange: #E97451;
   --nav-pink-shade: #DB7093;
-  --card-peach-shade: #FFDAB9;
-  --nav-deep-blue: #E2C3C4;
+  --card-peach-shade: #FFA07A;
+  --nav-dark-samon: #E9967A;
   --nav-bgd: #040b14;
   --white: #fff;
-  --coral: #FADBD8;
+  --rust: #D2691E;
   --navy: #160c2c;
   --light-blue: rgb(156, 183, 255);
-  --section-bgd: #140e24;
+  --section-bgd: #8B3A3A;
 
 }
 

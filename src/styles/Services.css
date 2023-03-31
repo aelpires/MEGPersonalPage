@@ -21,13 +21,13 @@
 }
 
 .services-card:hover {
-    box-shadow: inset 6px 6px 30px rgb(75, 75, 75);
+    box-shadow: inset 6px 6px 30px rgb(255, 223, 127);
     border: none;
 }
 
 .services-icon {
     font-size: 3rem;
-    color: var(--nav-pink);
+    color: var(--nav-orange);
     margin-bottom: 2rem;
 }
 

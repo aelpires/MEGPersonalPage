@@ -9,8 +9,8 @@
     padding: 1rem;
     width: 80%;
     margin: 0 auto;
-    /* border: 1px solid var(--nav-pink); */
-    color: var(--nav-pink);
+    /* border: 1px solid var(--nav-orange); */
+    color: var(--nav-orange);
     cursor: pointer;
     border-radius: 5px;
     display: flex;
