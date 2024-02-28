@@ -4,7 +4,7 @@ import { FaHome } from "react-icons/fa";
 import { BiServer, BiEnvelope } from "react-icons/bi";
 import { FiUser } from "react-icons/fi";
 import { Link } from "react-scroll";
-import ProfileImg from "../../images/profile.jpg";
+import ProfileImg from "../../images/ffff.png";
 import NavLinks from "./NavLinks";
 import { motion } from "framer-motion";
 import { AnimatePresence } from "framer-motion";
@@ -48,18 +48,7 @@ const Navbar = ({ nav, handleNav }) => {
 						<div className='img__cover'>
 							<img src={ProfileImg} alt='Main' className='profile-pic-small' />
 						</div>
-						<Link
-							activeClass='active'
-							spy={true}
-							smooth={true}
-							offset={0}
-							duration={500}
-							onClick={handleNav}
-							to='home'
-							className='profile-name'>
-							Maria Eugênia Ghizellini
-						</Link>
-						<NavLinks handleNav={handleNav} />
+
 					</div>
 					<ul className='mid-details'>
 						<Link
@@ -85,7 +74,7 @@ const Navbar = ({ nav, handleNav }) => {
 							className='mid-links'>
 							<FiUser className='mid-icon' />
 							<li className='mid-link' onClick={handleNav}>
-								About
+								Sobre
 							</li>
 						</Link>
 						{/* This is a comment for future reference */}
@@ -112,7 +101,7 @@ const Navbar = ({ nav, handleNav }) => {
 							className='mid-links'>
 							<BiServer className='mid-icon' />
 							<li className='mid-link' onClick={handleNav}>
-								Services
+								Serviços
 							</li>
 						</Link>
 						<Link
@@ -125,13 +114,25 @@ const Navbar = ({ nav, handleNav }) => {
 							className='mid-links'>
 							<BiEnvelope className='mid-icon' />
 							<li className='mid-link' onClick={handleNav}>
-								Contact
+								Contactos
 							</li>
 						</Link>
+						<Link
+							activeClass='active'
+							spy={true}
+							smooth={true}
+							offset={0}
+							duration={500}
+							onClick={handleNav}
+							to='home'
+							className='profile-name'>
+								Siga também
+						</Link>
+						<NavLinks handleNav={handleNav} />
 					</ul>
 					<div className='copy'>
 						<small className='copyright'>
-							{`© ${new Date().getFullYear()} CodeCove Innovations. `}
+							{`© ${new Date().getFullYear()} Alexandre Pires. `}
 							<a href={`${process.env.PUBLIC_URL}/humans.txt`} target="_blank" rel="noopener noreferrer">
 							<br /> All rights reserved.
 							</a>

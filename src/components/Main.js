@@ -5,6 +5,7 @@ import HeroSection from './HeroSection';
 import Services from './Services';
 
 
+
 const Main = ({nav, handleNav, closeNav}) => {
   return(
     <div onClick={closeNav } className='main'>

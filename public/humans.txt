@@ -18,18 +18,18 @@ Figma
 Photoshop
 Blender
 
-github.com/aelpires
-aelpires@gamil.com
-
-_______________________________________________________________________________
-
 TECHNOLOGY 
 
 VS Code
 React
-Next.js
-Three.js
-Framer Motion
+Framer Motion.
+_______________________________________________________________________________
+
+GitHub Repo:
+github.com/aelpires
+
+Job Related:
+aelpires@gmail.com
 
 _______________________________________________________________________________
 

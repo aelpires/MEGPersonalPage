@@ -1,7 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 /* Side Navbar */
 .navbar {
-    background-color: var(--section-bgd);
-    color: var(--white);
+    background-color: var(--pinky-bgd);
+    color: var(--bege-cont);
     position: fixed;
     top: 0;
     left: -100%;
@@ -10,6 +11,7 @@
     overflow-y: scroll;
     transition: all .5s ease-in-out;
     z-index: 99999;
+    border-right: 3px solid var(--light-blue);
 }
 
 .navbar.active {
@@ -39,29 +41,39 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    margin-left: 1.4rem;
 }
 .profile-pic-small {
     height: 100%;
-    width: 100%;
-    border-radius: 50%;
-    margin-bottom: 1rem;
-    border: 5px solid var(--nav-dark-samone);
+    width: auto;
+    border: none;
+    transform: scale(1.4);
+
 }
 
 .profile-name {
-    font-size: 1rem;
-    font-weight: 600;
-    font-family: "Poppins", sans-serif;
+    font-size: 0.8rem;
+    font-weight: 100;
+    font-family: "Work Sans", sans-serif;
     text-decoration: none;
-    color: var(--white);
+    color: var(--bege-cont);
+    margin-top: 2rem;
     margin-bottom: 1rem;
     cursor: pointer;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
 }
 
 .nav-links {
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
+    margin-top: 0.8rem;
 }
 
 .nav-links li, .mid-details li {
@@ -74,20 +86,22 @@
     align-items: center;
     cursor: pointer;
     text-decoration: none;
-    color: var(--white);
+    color: var(--light-blue);
     margin: 0 .3rem;
     padding: .7rem;
-    background-color: var(--nav-dark-samon);
+    background-color: var(--bege-cont);
     border-radius: 50%;
     transition: all 0.3s ease-in-out;
 }
 
 .nav-link:hover {
-    background-color: var(--nav-orange);
+    background-color: var(--rum-cont);
+    color: var(--bege-cont)
 }
 
 .mid-details {
     padding: 1rem;
+
 }
 
 .flex{
@@ -106,14 +120,15 @@
 }
 
 .mid-links.active {
-    color: var(--nav-orange);
+    color: var(--light-blue);
 }
 
 .mid-links:hover {
-    color: var(--white);
+    color: var(--rum-cont);
+    font-weight: 600;
 }
 
-.mid-links:hover .mid-icon { color: var(--nav-orange); }
+.mid-links:hover .mid-icon { color: var(--light-blue); }
 
 .mid-icon {
     margin-right: 1rem;
@@ -126,10 +141,18 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    bottom: 1%;
+    margin-left: 1.1rem;
+}
+.copy a{
+    color: var(--bege-cont);
+    text-decoration: none;
 }
 
 .copyright {
-    color: var(--white);
+    color: var(--bege-cont);
     font-size: 65%;
     font-family: "Quicksand", sans-serif;
+    text-decoration: none;
 }

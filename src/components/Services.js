@@ -1,49 +1,89 @@
-import React from 'react';
-import "../styles/Services.css"
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import servicesData from './services/Data';
 import { MdPersonalInjury } from 'react-icons/md';
-import { TbHeartPlus } from 'react-icons/tb';
-import { BiHealth } from "react-icons/bi";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from 'framer-motion';
+import ProfileImg from "../images/ffff.png";
+import '../styles/Services.css';
+import { ImAccessibility } from "react-icons/im";
 
 
 const Services = () => {
+    const [selectedService, setSelectedService] = useState(null);
 
-   const fade = {
-    opacity: 1,
-    transition:{
-        duration: 1.4
-    }
-   }
+    const handleServiceClick = (serviceId) => {
+        const service = servicesData.find(service => service.id === serviceId);
+        setSelectedService(service);
+    };
 
-  return (
-      <>
-          <div className="services" id='services'>
-              <div className="container">
-                <motion.div whileInView={fade} viewport={{ once: true }} initial={{opacity: 0}} className="heading">
-                    <p className="heading-sub-text">What I can do</p>
-                    <p className='heading-text'>Services</p>
-                </motion.div>
-                <motion.div className="services-box" whileInView={fade} initial={{opacity: 0}}>
-                    <div className="services-card">
-                        <MdPersonalInjury className='services-icon' />
-                        <p className='services-title'>Physical Therapy</p>
-                        <p className='services-desc'>Personalized physical therapy services in a comfortable and private studio. With a variety of techniques and modalities to help you recover from injury, reduce pain, and improve your strength and flexibility. With a focus on your specific needs and goals, I'll work with you to create a customized treatment plan to help you achieve optimal results. </p>
+    const handleCloseServicePopup = () => {
+        setSelectedService(null);
+    };
+
+    const horizontal ={
+        x:0, 
+        opacity: 1, 
+        transition:{type: 'spring', duration: 2,bounce: 0.3}
+      }
+
+    return (
+        <>
+            <div className="services" id='services'>
+                <div className="container">
+                    <div className="heading">
+                        <p className="heading-sub-text">Serviços</p>
+                        <p className='heading-text'>Areas de foco</p>
                     </div>
-                    <div className="services-card">
-                        <BiHealth className='services-icon' />
-                        <p className='services-title'>Woman Health</p>
-                        <p className='services-desc'>Voluptate laborum ullamco fugiat et labore consectetur eiusmod cillum ut. Deserunt fugiat laborum enim minim reprehenderit veniam est velit consequat dolor. Commodo in pariatur ullamco qui ad qui ea id minim cillum cillum ad. In voluptate aliquip laborum proident adipisicing aliqua fugiat consectetur do duis anim nulla. </p>
+                    <div className="services-box">
+                        {servicesData.map(service => (
+                            <motion.div initial={{x: '100%', opacity: 0}} whileInView={horizontal}>
+                                <div key={service.id} onClick={() => handleServiceClick(service.id)} className="services-card">
+                                    <div className='services-icon'>{service.icon}</div>
+                                    <p className='services-title'>{service.title}</p>
+                                    <p className='services-desc'>{service.subTitle}</p>  
+                                </div>
+                            </motion.div>
+                        ))}
                     </div>
-                    <div className="services-card">
-                        <TbHeartPlus className='services-icon' />
-                        <p className='services-title'>Movement</p>
-                        <p className='services-desc'>Irure commodo officia aute amet aute dolore duis officia elit cupidatat laborum occaecat. Nisi sunt non duis elit aliqua. Exercitation enim quis nulla tempor ea qui aliquip fugiat anim minim. Duis qui dolore ex ut nostrud minim deserunt. Ipsum in dolore proident deserunt ullamco aliquip et. Irure do nulla excepteur cupidatat minim. </p>
-                    </div>
-                </motion.div>
-              </div>
-          </div>
-      </>
-  )
+                </div>
+            </div>
+            {/* Render pop-up */}
+            <AnimatePresence>
+                {selectedService && (
+                    <motion.div className="service-popup-bg"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                    >
+                        <motion.div className="service-popup"
+                            initial={{ opacity: 0, y: 50 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: 50 }}
+                        >
+                            <button className="close-btn" onClick={handleCloseServicePopup}>Close</button>
+                            <div className='img__logo'>
+							    <img src={ProfileImg} alt='Main' className='service-pic-small' />
+						    </div>
+                            <div className='img__header'>
+                            <img src={selectedService.mainImage} alt='Main' className='service-pic-header' />
+                            </div>
+                            <h2 className="service-title">{selectedService.title}</h2>
+                            <h3 className="service-subtitle">{selectedService.subTitle}</h3>
+                            <p className="service-text" dangerouslySetInnerHTML={{ __html: selectedService.text }}></p>
+                            <div className="service-images">
+                                {selectedService.images.map((imageUrl, index) => (
+                                    <img key={index} src={imageUrl} alt={`Image ${index}`} className="service-image" />
+                                ))}
+                            </div>
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        </>
+    );
 };
 
 export default Services;
+
+
+

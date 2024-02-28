@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Open+Sans:wght@400;500&family=Poppins:wght@300;400;600&family=Quicksand:wght@400;600&family=Roboto+Condensed:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: "Work Sans", sans-serif;
 }
 
 body::-webkit-scrollbar {
@@ -40,8 +41,13 @@ html, body {
   --white: #fff;
   --rust: #D2691E;
   --navy: #160c2c;
-  --light-blue: rgb(156, 183, 255);
+  --light-blue: #2c5966;
+  --lighter-blue: #79c1c0;
   --section-bgd: #8B3A3A;
+  --pinky-bgd: #d97378;
+  --bege-cont: #d2d3bb;
+  --golden-cont: #b8ab64;
+  --rum-cont: #d12c49;
 
 }
 
@@ -51,7 +57,7 @@ html, body {
 .services,
 .works,
 .contact {
-  background-color: var(--section-bgd);
+  background-color: var(--pinky-bgd);
   color: var(--nav-grey);
   width: 100%;
 }
@@ -106,7 +112,7 @@ html, body {
   animation: 3s ease 0s 1 pageLoad;
 }
 .text {
-  font-size: 16px;
+  font-size: 14px;
   text-transform: uppercase;
   line-height: 32px;
   letter-spacing: 8px;
@@ -121,6 +127,11 @@ html, body {
 @media screen and (max-width: 700px) {
   .container {
     padding: 3rem;
+  }
+  .text {
+    font-size: 14px;
+    letter-spacing: 7px;
+    margin-left:12px;
   }
 }
 

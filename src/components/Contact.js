@@ -25,8 +25,8 @@ const Contact = () => {
         <div className="contact" id='contact'>
             <div className="container">
                 <motion.div className="heading" initial={{opacity: 0}} whileInView={fade} viewport={{ once: true }}>
-                    <p className="heading-sub-text">Hire Me</p>
-                    <p className='heading-text'>Get in Touch</p>
+                    <p className="heading-sub-text">Curiosa/o?</p>
+                    <p className='heading-text'>Entre em contacto</p>
                 </motion.div>
                 <div className="contact-box">
                     <motion.div className="left-box" initial={{opacity: 0, y: '-50px'}} whileInView={verticalLeft}>
@@ -34,8 +34,9 @@ const Contact = () => {
                             <p>I am interested in  opportunities, especially ambitious or large projects. However, if you have other request or question, do not hesitate to use the form</p>
                         </div>
                         <div className="contact-hello">
-                            <p>Say Hello</p>
-                            <Link className='hello-links' to="//mailto:maria.ghizellini@gmail.com" target='_blank'>maria.ghizellini@gmail.com</Link>
+                            <p> Moramos longe? Não tem problema nenhum.
+                                <br/>Encontre aqui todos os serviços que estou oferecendo atualmente na modalidade online
+                            </p>
                         </div>
                     </motion.div>
                     <motion.div className="right-box" initial={{opacity: 0, y: '50px'}} whileInView={verticalLeft}>

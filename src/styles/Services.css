@@ -1,13 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
 .services-box {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 1rem;
+    justify-content: center;
+    gap: 6rem;
+    margin-top: 10vh;
 }
 
 .services-card {
     width: fit-content;
-    max-width: 300px;
+    width: 170px;
+    height: 260px;
     margin: 0 auto;
     cursor: pointer;
     display: flex;
@@ -18,6 +23,13 @@
     padding: 2rem;
     border-radius: 5px;
     transition: all 0.4s ease;
+
+    border-radius: 16px;
+}
+
+.services-box a {
+    text-decoration: none; /* Remove underline */
+    color: #fff; /* Use the default text color */
 }
 
 .services-card:hover {
@@ -27,29 +39,158 @@
 
 .services-icon {
     font-size: 3rem;
-    color: var(--nav-orange);
+    color: var(--rum-cont);
     margin-bottom: 2rem;
 }
 
 .services-title {
     font-size: 1.3rem;
     margin-bottom: 1rem;
+    color: var(--bege-cont);
 }
 
 .services-desc {
     font-size: .8rem;
     line-height: 1.5;
+    color: var(--bege-cont);
+}
+
+.services-underdesc {
+    font-size: .7rem;
+    text-align: left;
+}
+
+/* Styling for the service pop-up */
+.service-popup-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black overlay */
+    backdrop-filter: blur(100px); /* Background blur effect */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999998; /* Ensure it's above other content */
+}
+
+.service-popup {
+    max-width: calc(100% - 100px); /* Maximum width 100px margin from each side */
+    margin: 50px;
+    background-color: var(--bege-cont);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    max-height: 90vh; /* Set maximum height */
+    overflow-y: auto; /* Enable vertical scroll */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer and Edge */
+}
+
+.close-btn {
+    position: relative;
+    top: -0.2rem;
+    left: 92%;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 9999;
+    font-size: 1rem;
+}
+
+.close-btn:hover {
+    background-color: darkred;
+}
+
+.img__logo{
+    height: 100px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 50%;
+}
+
+.service-pic-small {
+    height: 100%;
+    width: auto;
+    margin-bottom: 1rem;
+    border: none;
+
+}
+
+.service-title {
+    font-size: 2rem;
+    font-family: "Work Sans", sans-serif;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.service-subtitle {
+    font-size: 1rem;
+    font-family: "Work Sans", sans-serif;
+    font-weight: 600;
+    color: var(--light-blue);
+    margin-bottom: 2rem;
+}
+
+.service-text {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+}
+
+.img__header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.service-pic-header {
+    height: 170px;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-position: center;
+    border-radius: 6px;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+
+}
+
+.service-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 2rem;
+}
+
+.service-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
 }
 
 /* Media Queries */
 @media screen and (max-width: 768px) {
+    .services-box {
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 3rem;
+    }
     .services-card {
-        width: 100%;
+        width: 90%;
         padding: 1rem;
     }
+    
 }
 
 @media screen and (max-width: 550px) {
+    .services-box {
+        gap: 1rem;
+    }
+
     .services-icon {
         font-size: 2.5rem;
         margin-bottom: 1.5rem;
@@ -63,3 +204,4 @@
         font-size: .7rem;
     }
 }
+
