@@ -14,16 +14,18 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-  background: var(--section-bgd);
+  background: var(--pinky-bgd);
 }
 
 body::-webkit-scrollbar-thumb {
-  background: var(--nav-orangek);
+  background: var(--light-blue);
   border-radius: 100vh;
 }
 
 body::-webkit-scrollbar-thumb:hover {
-  background: var(--nav-pink-shade);
+  background: var(--bege-cont);
+  cursor: grab;
+  
 }
 
 html, body {

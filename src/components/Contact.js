@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/Contact.css";
 import { motion } from "framer-motion";
+import { AiOutlineWhatsApp } from "react-icons/ai";
+import { AiTwotoneMail } from "react-icons/ai";
 
 const Contact = () => {
+    const [openModal, setOpenModal] = useState(false);
+
     const fade = {
         opacity: 1,
         transition:{
@@ -19,6 +23,20 @@ const Contact = () => {
         }
     }
 
+    const contactVariants = {
+		hidden: {
+			opacity: 0,
+			x: "-50%",
+		},
+		visible: {
+			opacity: 1,
+			x: 0,
+			transition: {
+				duration: 1.4,
+			},
+		},
+	};
+
 
   return (
       <>
@@ -31,7 +49,7 @@ const Contact = () => {
                 <div className="contact-box">
                     <motion.div className="left-box" initial={{opacity: 0, y: '-50px'}} whileInView={verticalLeft}>
                         <div className="contact-heading">
-                            <p>I am interested in  opportunities, especially ambitious or large projects. However, if you have other request or question, do not hesitate to use the form</p>
+                            <p>Se tem duvidas ou quer entrar em contacto, para além das redes sociais, pode também contactar através:</p>
                         </div>
                         <div className="contact-hello">
                             <p> Moramos longe? Não tem problema nenhum.
@@ -39,58 +57,36 @@ const Contact = () => {
                             </p>
                         </div>
                     </motion.div>
-                    <motion.div className="right-box" initial={{opacity: 0, y: '50px'}} whileInView={verticalLeft}>
-                    
-                        <form
-                            name="contact-form"
-                            method="POST"
-                            data-netlify="true"
-                            action="POST"
-                        >
-                            <input type="hidden" name="form-name" value="contact-form" />
-                            <div className="form-top">
-                            <div className="name">
-                                <label htmlFor="name">Your Name</label>
-                                <input
-                                type="text"
-                                name="name"
-                                id="name"
-                                placeholder="Enter your name"
-                                required
-                                />
+                    <motion.div className="right-box" initial={{ opacity: 0, y: '50px' }} whileInView={verticalLeft}>
+                        <motion.span
+                            onClick={() => window.location.href = 'mailto:mariaghizellini@gmail.com'}
+                            variants={contactVariants}
+                            initial='hidden'
+                            whileInView='visible'>
+                            <a
+                                className='contact-Whats'>
+                                  <AiTwotoneMail /> Email
+                            </a>        
+			            </motion.span>                                
+                        <motion.span
+                            onClick={() => setOpenModal(true)}
+                            variants={contactVariants}
+                            initial='hidden'
+                            whileInView='visible'>
+                            <a
+                                className='contact-Whats'>
+                                <AiOutlineWhatsApp /> WhatsApp
+                            </a>           
+			            </motion.span>
+                        {openModal && (
+                            <div className="modal">
+                                <div className="modal-content">
+                                    <span className="close" onClick={() => setOpenModal(false)}>&times;</span>
+                                    <h2>WhatsApp Contact</h2>
+                                    <p>Phone Number: +1234567890</p>
+                                </div>
                             </div>
-
-                            <div className="email">
-                                <label htmlFor="email">Your Email</label>
-                                <input
-                                type="email"
-                                name="email"
-                                id="email"
-                                placeholder="Enter your email address"
-                                required
-                                />
-                            </div>
-                            </div>
-
-                            <div className="form-mid">
-                            <div className="message">
-                                <label htmlFor="message">Your message</label>
-                                <textarea
-                                type="text"
-                                name="message"
-                                id="message"
-                                placeholder="Hi, I think I need you to work on this particular product. Reach out as soon as you can"
-                                required
-                                ></textarea>
-                            </div>
-                            </div>
-
-                            <div className="form-btn">
-                            <button type="submit" className="hero-contact">
-                                Send Message
-                            </button>
-                            </div>
-                        </form>
+                        )}
                     </motion.div>
                 </div>
             </div>

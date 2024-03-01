@@ -96,7 +96,7 @@ const HeroSection = ({ nav, handleNav }) => {
 					<span>Ghizellini</span> <span>Maria Eugênia.</span>
 				</p>
 				<p className='hero-desc'>
-					I'm a <span className='hero-desc-sub'>Physical Therapist.</span>
+					Saude da <span className='hero-desc-sub'>Mulher</span>.
 				</p>
 			</motion.div>
 			<motion.span
@@ -107,7 +107,7 @@ const HeroSection = ({ nav, handleNav }) => {
 					href='Maria Eugênia Ghizellini CV.pdf'
 					download='Maria Eugênia Ghizellini CV'
 					className='hero-contact'>
-					Learn more about my work <BiHealth className='cv-icon' />
+					Mais sobre a minha formação (CV) <BiHealth className='cv-icon' />
 				</a>
 			</motion.span>
 		</div>

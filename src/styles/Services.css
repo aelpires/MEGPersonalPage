@@ -148,31 +148,51 @@
 }
 
 .service-pic-header {
-    height: 170px;
+    height: 200px;
     width: 80%;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-position: center;
+    object-fit: cover; /* Adjusts the image to cover the entire container */
+    object-position: center calc(100% + 200px);/* Adjusts the position of the image within the container */
     border-radius: 6px;
     margin-top: 2vh;
     margin-bottom: 2vh;
-
 }
 
 .service-images {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     grid-gap: 2rem;
+    
 }
 
 .service-image {
     width: 100%;
     height: 200px;
     object-fit: cover;
+    border-radius: 16px;
+    transition: all 0.4s ease;
+}
+.service-image:hover {
+    transform: scale(1.2);
 }
 
 /* Media Queries */
+@media screen and (max-width: 1024px) {
+    .services-box {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+    .services-card {
+        width: 90%;
+        padding: 1rem;
+    }
+    
+}
 @media screen and (max-width: 768px) {
     .services-box {
         flex-direction: column;

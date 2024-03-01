@@ -45,10 +45,15 @@
 	font-weight: 200;
 }
 
+.hero-desc-sub {
+	color: var(--pinky-bgd);
+	font-weight: 400;
+}
+
 .hero-contact {
 	text-decoration: none;
 	color: var(--bege-cont);
-  font-size: 80%;
+  	font-size: 80%;
 	font-weight: 500;
 	letter-spacing: 3px;
 	padding: 1rem 2rem;
